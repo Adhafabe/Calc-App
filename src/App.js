@@ -1,20 +1,23 @@
 //importacion
 import React from 'react';
+import Button from './components/Button'
+import Functions from './components/Functions';
+import MathOperation from './components/MathOperation';
 import Result from './components/Result';
-import Button from './components/Button';
 import './App.css';
 
 //Generacion de la funcion del componente (funcion flecha)
 const App = () => {
-    const clickhandlerFunction = (text) => {
-        console.log("Button.clickhandlerFunction", text);
+    const clickHandlerFunction = text => {
+        console.log("Button.clickHandler1", text);
     }
     //Lo que ejecuta la funcion
+    console.log("Renderización de App");
     return (
         <main className="react-calculator">
-            <Result value={"0"}></Result>
+            <Result value={undefined}></Result>
             <div className="numbers">
-                <Button text={1} class={"number"} clickHandler={(text)=>{console.log("text")}}></Button>
+                <Button text="1" type="numbers" clickHandler={clickHandlerFunction}></Button>
                 <button>2</button>
                 <button>3</button>
                 <button>4</button>
@@ -25,21 +28,18 @@ const App = () => {
                 <button>9</button>
                 <button>0</button>
             </div>
-            <div className="functions">
-                <button>
-                    clear
-                </button>
-                <button>
-                    r
-                </button>
-            </div>
-            <div className="math-operations">
-                <button>+</button>
-                <button>-</button>
-                <button>*</button>
-                <button>/</button>
-                <button>=</button>
-            </div>
+            <Functions 
+                oncContentClear={()=>console.log("Content Clear")}
+                onDelete={() => console.log("onDelete")}
+            />
+            <MathOperation
+                onClickOperation={operation => 
+                    console.log("Operation:", operation)
+                } 
+                onClickEqual={equal => 
+                    console.log("Equal:", equal)
+                }
+            />
 
         </main>
     )
