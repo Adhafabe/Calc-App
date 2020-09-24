@@ -1,37 +1,40 @@
 //importacion
-import React from 'react';
-import Button from './components/Button'
+import React, {useState} from 'react';
+import Button from './components/Button/Button'
 import Functions from './components/Functions';
+import Number from './components/Number';
 import MathOperation from './components/MathOperation';
 import Result from './components/Result';
 import './App.css';
 
 //Generacion de la funcion del componente (funcion flecha)
 const App = () => {
-    const clickHandlerFunction = text => {
-        console.log("Button.clickHandler1", text);
-    }
+
+    //Uso de useState <<Hooks>> para el funcionamiento en el cambio del result
+    //array destructuring
+    //1er posicion: valor (que inicialmente es el valor por defecto)
+    //2da posicion: funcion que se va a permitir modificar
+    const [stack,setStack] = useState("");
+
+    const arrayTextoFuncionModificaTexto = useState("");
+
     //Lo que ejecuta la funcion
     console.log("Renderización de App");
     return (
         <main className="react-calculator">
-            <Result value={undefined}></Result>
-            <div className="numbers">
-                <Button text="1" type="numbers" clickHandler={clickHandlerFunction}></Button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button>0</button>
-            </div>
+
+            <Result value={stack} />
+
+            <Number onClickNumber = {number => {
+                console.log("Click en el numero ", number)
+                setStack(stack + number)
+            }}></Number>
+            
             <Functions 
-                oncContentClear={()=>console.log("Content Clear")}
+                onContentClear={()=>console.log("Content Clear")}
                 onDelete={() => console.log("onDelete")}
             />
+
             <MathOperation
                 onClickOperation={operation => 
                     console.log("Operation:", operation)

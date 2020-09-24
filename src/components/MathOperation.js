@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from './Button';
+import Button from './Button/Button';
+
 
 const MathOperation = ({onClickOperation, onClickEqual}) => (
     <section className="math-operations">
