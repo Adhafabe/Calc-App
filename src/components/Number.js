@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from './Button/Button';
 
 // DRY: Don't repeat yourself
-const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+const numbers = [9,8,7,6,5,4,3,2,1,0,"."];
 
 const renderButtons = onClickNumber => {
     // var number = 0
@@ -17,7 +17,7 @@ const renderButtons = onClickNumber => {
 }
 
 const Number = ({ onClickNumber }) => (
-    <section className="number">
+    <section className="numbers">
         {
             renderButtons(onClickNumber)
         }

@@ -3,7 +3,7 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom right, #7a5cff 0%, #3cd644 100%);
+  background: #ffce5c;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -16,12 +16,12 @@ body {
 .react-calculator {
     position: relative;
     margin: 0 auto;
-    width: 320px;
-    background-color: #292f36;  
+    background-color: #ededed;  
     box-shadow: 0 19px 38px rgba(19, 19, 19, .24),
-  0 15px 12px rgba(19, 19, 19, .12);
+                0 15px 12px rgba(19, 19, 19, .12);
+    width: 280px;
+    padding: 10px;
 }
-
 
 button {
   outline: none;
@@ -29,10 +29,13 @@ button {
   padding: 16px;
   font-size: 20px;
   line-height: 1;
-  background-color: transparent;
+  background-color: #ffffff;
   color: #ffce5c;
   transition: all 300ms;
   border: 1px solid #0001;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
 }
 
 button:hover {
@@ -43,11 +46,13 @@ button:hover {
 
 .result {
   position: relative;
-  width: 320px;
+  width: 100%;
   height: 80px;
   padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
   overflow: hidden;
-  background-color: rgba(19, 19, 19, .64);
+  background-color: #d63c6b;
   font-size: 32px;
   line-height: 2;
   color: #60d63c;
@@ -59,8 +64,6 @@ button:hover {
 
 .functions button, .math-operations button {
   display: inline-block;
-  width: 80px;
-  height: 80px;
   color: #d63c6b
 }
 
@@ -70,23 +73,19 @@ button:hover {
 }
 
 .numbers {
-  width: 240px;
+  width: 210px;
   float: left;
 }
 
 .numbers button {
   display: block;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   float: left;
-}
-
-.numbers button:last-child {
-  width: 100%;
 }
 
 .functions {
   float: left;
-  width: 240px;
+  width: 210px;
 }
