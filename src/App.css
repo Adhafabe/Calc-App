@@ -16,7 +16,7 @@ body {
 .react-calculator {
     position: relative;
     margin: 0 auto;
-    background-color: #ededed;  
+    background-color: #264655;  
     box-shadow: 0 19px 38px rgba(19, 19, 19, .24),
                 0 15px 12px rgba(19, 19, 19, .12);
     width: 280px;
@@ -29,13 +29,12 @@ button {
   padding: 16px;
   font-size: 20px;
   line-height: 1;
-  background-color: #ffffff;
+  background-color: #3c535e;
   color: #ffce5c;
   transition: all 300ms;
   border: 1px solid #0001;
   width: 70px;
   height: 70px;
-  border-radius: 50%;
 }
 
 button:hover {
